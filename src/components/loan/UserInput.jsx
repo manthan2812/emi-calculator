@@ -11,12 +11,13 @@ import {
   MIN_TERM,
   MAX_TERM,
   STEP_TERM,
-} from "./Common";
+} from "../../utils/common";
 
 const UserInput = ({
   principal,
   interest,
   term,
+  theme,
   onPrincipalChange,
   onInterestChange,
   onTermChange,
@@ -29,6 +30,7 @@ const UserInput = ({
         maxValue={MAX_PRINCIPAL}
         stepValue={STEP_PRINCIPAL}
         value={principal}
+        theme={theme}
         handleChange={onPrincipalChange}
       >
         <CurrencyRupee />
@@ -39,6 +41,7 @@ const UserInput = ({
         maxValue={MAX_INTEREST}
         stepValue={STEP_INTEREST}
         value={interest}
+        theme={theme}
         handleChange={onInterestChange}
       >
         <Percent />
@@ -49,6 +52,7 @@ const UserInput = ({
         maxValue={MAX_TERM}
         stepValue={STEP_TERM}
         value={term}
+        theme={theme}
         handleChange={onTermChange}
       >
         <Typography sx={{ fontWeight: "bold" }}>Years</Typography>

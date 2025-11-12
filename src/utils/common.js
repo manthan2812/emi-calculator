@@ -1,11 +1,14 @@
+// Memoize the formatter instance for better performance
+const numberFormatter = new Intl.NumberFormat("en-IN", {
+  style: "currency",
+  currency: "INR",
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+
 const formatNumber = (num) => {
   if (!isFinite(num)) return "₹0";
-  return new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(Math.round(num));
+  return numberFormatter.format(Math.round(num));
 };
 
 const PRI_COLOR = "#FF7C64";

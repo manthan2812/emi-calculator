@@ -1,0 +1,35 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #0f1720;
+  --card: #ffffff;
+  --muted: #6b7280;
+}
+
+.dark-theme {
+  --bg: #0b1220;
+  --text: #e6eef8;
+  --card: #0f1724;
+  --muted: #94a3b8;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.card {
+  background: var(--card);
+  color: var(--text);
+}

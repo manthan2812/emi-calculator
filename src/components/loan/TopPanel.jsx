@@ -13,7 +13,9 @@ const TopPanel = ({
   onPrincipalChange,
   onInterestChange,
   onTermChange,
+  theme,
 }) => {
+  const isDark = theme === "dark";
   return (
     <Box
       sx={{
@@ -21,6 +23,8 @@ const TopPanel = ({
         justifyContent: "space-around",
         alignItems: "center",
         p: 1,
+        bgcolor: isDark ? "#1a1a1a" : "#fff",
+        transition: "all 0.3s ease",
       }}
     >
       <Box
@@ -38,6 +42,7 @@ const TopPanel = ({
           principal={principal}
           interest={interest}
           term={term}
+          theme={theme}
           onPrincipalChange={onPrincipalChange}
           onInterestChange={onInterestChange}
           onTermChange={onTermChange}
@@ -61,6 +66,7 @@ const TopPanel = ({
           interest={totalInterest}
           total={totalAmount}
           noOfEmis={term * 12}
+          theme={theme}
         />
       </Box>
       <Box sx={{ width: "25%" }}>
@@ -68,6 +74,7 @@ const TopPanel = ({
           principal={principal}
           interest={totalInterest}
           total={totalAmount}
+          theme={theme}
         />
       </Box>
     </Box>

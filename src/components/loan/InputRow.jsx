@@ -14,9 +14,11 @@ const InputRow = ({
   maxValue,
   stepValue,
   value,
+  theme,
   handleChange,
   children,
 }) => {
+  const isDark = theme === "dark";
   const marks = [
     {
       value: minValue,
@@ -72,6 +74,29 @@ const InputRow = ({
         onChange={(e) => handleChange(roundToStep(e.target.value))}
         sx={{
           width: "100%",
+          "& .MuiOutlinedInput-root": {
+            color: isDark ? "#e0e0e0" : "#000",
+            backgroundColor: isDark ? "#2a2a2a" : "#fff",
+            "& fieldset": {
+              borderColor: isDark ? "#404040" : "#ccc",
+            },
+            "&:hover fieldset": {
+              borderColor: isDark ? "#505050" : "#999",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#FF7C64",
+            },
+          },
+          "& .MuiInputBase-input::placeholder": {
+            color: isDark ? "#999" : "#999",
+            opacity: 1,
+          },
+          "& .MuiInputLabel-root": {
+            color: isDark ? "#b0b0b0" : "#666",
+            "&.Mui-focused": {
+              color: "#FF7C64",
+            },
+          },
           "& input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button":
             {
               WebkitAppearance: "none",
@@ -103,6 +128,25 @@ const InputRow = ({
           marks={marks}
           onChange={(e) => handleChange(roundToStep(e.target.value))}
           valueLabelDisplay="auto"
+          sx={{
+            color: "#FF7C64",
+            "& .MuiSlider-track": {
+              backgroundColor: "#FF7C64",
+            },
+            "& .MuiSlider-rail": {
+              backgroundColor: isDark ? "#404040" : "#ccc",
+            },
+            "& .MuiSlider-mark": {
+              backgroundColor: isDark ? "#505050" : "#ccc",
+            },
+            "& .MuiSlider-markLabel": {
+              color: isDark ? "#b0b0b0" : "#666",
+              fontSize: "0.75rem",
+            },
+            "& .MuiSlider-valueLabelLabel": {
+              color: isDark ? "#fff" : "#000",
+            },
+          }}
         />
 
         {/* Increase button */}

@@ -1,7 +1,9 @@
 import { PieChart, pieArcLabelClasses } from "@mui/x-charts/PieChart";
-import { formatNumber, PRI_COLOR, INT_COLOR } from "./Common";
+import { formatNumber, PRI_COLOR, INT_COLOR } from "../../utils/common";
 
-const LoanChart = ({ principal, interest, total }) => {
+const LoanChart = ({ principal, interest, total, theme }) => {
+  const isDark = theme === "dark";
+
   const pieData = [
     {
       id: 0,
@@ -29,7 +31,7 @@ const LoanChart = ({ principal, interest, total }) => {
           valueFormatter: ({ value }) => `${formatNumber(value)}`,
           highlightScope: { fade: "global", highlight: "item" },
           highlighted: { additionalRadius: 3 },
-          faded: { additionalRadius: -8, color: "gray" },
+          faded: { additionalRadius: -8, color: isDark ? "#444" : "#e0e0e0" },
           cornerRadius: 3,
           outerRadius: 105,
         },
@@ -38,9 +40,19 @@ const LoanChart = ({ principal, interest, total }) => {
       sx={{
         [`& .${pieArcLabelClasses.root}`]: {
           fontSize: "11px",
+          fill: isDark ? "#e0e0e0" : "#000",
+          fontWeight: 600,
         },
       }}
       hideLegend
+      slotProps={{
+        legend: {
+          labelStyle: {
+            fontSize: 12,
+            fill: isDark ? "#e0e0e0" : "#000",
+          },
+        },
+      }}
     />
   );
 };

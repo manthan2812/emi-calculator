@@ -6,7 +6,6 @@ const Footer = () => {
       sx={{
         fontSize: "0.8rem",
         textAlign: "center",
-        color: "text.secondary",
         p: 0.5,
         display: "flex",
         flexDirection: "column",
