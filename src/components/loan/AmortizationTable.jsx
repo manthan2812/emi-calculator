@@ -10,12 +10,13 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
+import ComponentChart from "./ComponentChart";
 
 const AmortizationTable = ({ emi, amortizationSchedule, type, theme }) => {
   const isDark = theme === "dark";
 
   return (
-    <Box sx={{ m: 4, textAlign: "center" }}>
+    <Box sx={{ m: 2, textAlign: "center" }}>
       <TableContainer
         component={Paper}
         sx={{
@@ -80,6 +81,15 @@ const AmortizationTable = ({ emi, amortizationSchedule, type, theme }) => {
                   borderColor: isDark ? "#404040" : "#e0e0e0",
                 }}
               >
+                Chart
+              </TableCell>
+              <TableCell
+                sx={{
+                  fontWeight: "700",
+                  color: isDark ? "#fff" : "#000",
+                  borderColor: isDark ? "#404040" : "#e0e0e0",
+                }}
+              >
                 Closing Balance
               </TableCell>
             </TableRow>
@@ -135,6 +145,17 @@ const AmortizationTable = ({ emi, amortizationSchedule, type, theme }) => {
                   }}
                 >
                   {formatNumber(row.interestPaid)}
+                </TableCell>
+                <TableCell
+                  sx={{
+                    color: isDark ? "#e0e0e0" : "#212121",
+                    borderColor: isDark ? "#404040" : "#e0e0e0",
+                  }}
+                >
+                  <ComponentChart
+                    principal={Math.round(row.principalPaid)}
+                    interest={Math.round(row.interestPaid)}
+                  />
                 </TableCell>
                 <TableCell
                   sx={{

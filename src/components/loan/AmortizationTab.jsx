@@ -15,14 +15,12 @@ const AmortizationTab = ({
   const isDark = theme === "dark";
 
   return (
-    <Box sx={{ width: "100%", mt: 2, bgcolor: isDark ? "#1a1a1a" : "#fff" }}>
+    <Box sx={{ width: "100%", mt: 2 }}>
       <Tabs
         value={tab}
         onChange={(_, v) => changeTab(v)}
         centered
         sx={{
-          bgcolor: isDark ? "#2a2a2a" : "#f5f5f5",
-          borderBottom: `2px solid ${isDark ? "#404040" : "#e0e0e0"}`,
           "& .MuiTab-root": {
             color: isDark ? "#b0b0b0" : "#666",
           },

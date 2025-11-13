@@ -43,7 +43,7 @@ npm install
 npm run dev
 ```
 
-5. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+5. Open [http://localhost:5173/emi-calculator/](http://localhost:5173/emi-calculator/) to view it in your browser.
 
 ## Deployment
 
@@ -97,7 +97,7 @@ npm install
 npm run dev
 ```
 
-3. Open [http://localhost:5173](http://localhost:5173)
+3. Open [http://localhost:5173/emi-calculator/](http://localhost:5173/emi-calculator/)
 
 ## Usage
 
@@ -107,7 +107,3 @@ npm run dev
 4. View the calculated EMI and total amounts
 5. Explore the monthly/yearly amortization schedules
 6. Toggle between light and dark themes
-
-## License
-
-MIT License

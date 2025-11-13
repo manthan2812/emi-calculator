@@ -23,8 +23,6 @@ const TopPanel = ({
         justifyContent: "space-around",
         alignItems: "center",
         p: 1,
-        bgcolor: isDark ? "#1a1a1a" : "#fff",
-        transition: "all 0.3s ease",
       }}
     >
       <Box

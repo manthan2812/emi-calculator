@@ -66,7 +66,12 @@ const InputRow = ({
               max: maxValue,
             },
             endAdornment: (
-              <InputAdornment position="end">{children}</InputAdornment>
+              <InputAdornment
+                position="end"
+                sx={{ color: isDark ? "#fff" : "#000" }}
+              >
+                {children}
+              </InputAdornment>
             ),
           },
         }}
@@ -116,7 +121,7 @@ const InputRow = ({
             handleChange(roundToStep(value - stepValue));
           }}
         >
-          <Remove fontSize="small" />
+          <Remove fontSize="small" sx={{ color: isDark ? "#fff" : "#000" }} />
         </IconButton>
 
         <Slider
@@ -156,7 +161,7 @@ const InputRow = ({
             handleChange(roundToStep(value + stepValue));
           }}
         >
-          <Add fontSize="small" />
+          <Add fontSize="small" sx={{ color: isDark ? "#fff" : "#000" }} />
         </IconButton>
       </Stack>
     </Box>
